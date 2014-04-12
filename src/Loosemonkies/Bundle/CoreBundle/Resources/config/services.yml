@@ -1,0 +1,36 @@
+parameters:
+
+    #### Services ####
+    controller_listener.class: Loosemonkies\Bundle\CoreBundle\EventListener\ControllerListener
+
+    #### Repositories ####
+
+    click_repository.class: Loosemonkies\Bundle\CoreBundle\Repository\ClickRepository
+    phone_repository.class: Loosemonkies\Bundle\CoreBundle\Repository\PhoneRepository
+    industry_repository.class: Loosemonkies\Bundle\CoreBundle\Repository\IndustryRepository
+
+services:
+
+    #### Services ####
+
+    controller_listener:
+        class: %controller_listener.class%
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+
+    #### Repositories ####
+
+    industry_repository:
+        class: %industry_repository.class%
+        factory_service: doctrine_mongodb.odm.document_manager
+        factory_method: getRepository
+        arguments:
+            - 'LoosemonkiesCoreBundle:Industry'
+
+    phone_repository:
+        class: %phone_repository.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - 'LoosemonkiesCoreBundle:Phone'
+

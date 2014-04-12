@@ -1,0 +1,29 @@
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+web/images/*
+web/assets
+web/css
+web/js
+web/img
+web/font
+web/fonts
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+web/.htaccess
+
+# IDE
+.idea
+.nbproject
+
+# OS
+Thumbs.db
+.DS_Store

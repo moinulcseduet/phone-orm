@@ -1,0 +1,69 @@
+parameters:
+
+    locale: en
+    secret: 'IamChangingTheSecretToken!@#$%'
+
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: loosemonkies
+    database_user: root
+    database_password: commonrbs
+
+    test_database_host: 127.0.0.1
+    test_database_port: null
+    test_database_name: lm-service
+    test_database_user: root
+    test_database_password: commonrbs
+
+    mongodb_host: localhost
+    mongodb_port: 27017
+    mongodb_name: loosemonkies
+
+    test_mongodb_host: localhost
+    test_mongodb_port: 27017
+    test_mongodb_name: loosemonkies
+
+    gearman_host: localhost
+    gearman_port: 4730
+
+    gearmanhigh_host: localhost
+    gearmanhigh_port: 4730
+
+    memcache_host: localhost
+    memcache_port: 11211
+    cache_enabled: true
+
+    elastica_host: localhost
+    elastica_port: 9200
+
+    solr_host: ec2-54-251-85-113.ap-southeast-1.compute.amazonaws.com
+    solr_port: 8983
+    solr_path: /solr/bd_vocabulary_core
+
+    web_host: http://www.loosemonkies.dev
+    service_host: http://api.loosemonkies.dev
+
+    location_filter: 1
+    conversion_factor: 1
+    allowed_free_job_count: 0
+    company_default_balance: 1500.00
+    high_treat_report_threshold: 50
+    default_passive_seeker_matching_threshold: 0.75
+
+    location_matching_preference:
+        0:
+            salary_weight: 1
+            location_weight: 0
+
+        1:
+            salary_weight: 0.75
+            location_weight: 0.25
+
+        2:
+            salary_weight: 0.5
+            location_weight: 0.5
+
+        3:
+            salary_weight: 0.5
+            location_weight: 0.5

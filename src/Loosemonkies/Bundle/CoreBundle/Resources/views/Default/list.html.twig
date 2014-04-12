@@ -1,0 +1,36 @@
+{% extends 'LoosemonkiesCoreBundle::layout.html.twig' %}
+
+{% block title %} Welcome to phone list page {% endblock %}
+
+{% block content %}
+
+    <div class="row-fluid" style=" margin-top: 10px !important;">
+        <div class="span2">
+            <!--Sidebar content-->
+
+            Search: <input name="query" type="text" value="" onkeyup="searchList(this.value)" class="search" />
+            Sort by:
+            <select name="order_prop" onchange="sortSearch(this.value)">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+                <option value="-age">Oldest</option>
+            </select>
+
+        </div>
+        <div class="span10">
+            <!--Body content-->
+
+            <ul class="phones">
+                {% for phone in phones %}
+                    <li class="thumbnail phone-listing">
+                        <a href="/phone-details/{{phone.phoneId}}" class="thumb"><img src="/upload/{{phone.images}}"></a>
+                        <a href="/phone-details/{{phone.phoneId}}">{{ phone.name }}</a>
+                        <p>{{phone.snippet}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Phone List Panel</title>
+
+    {% stylesheets
+    'assets/css/bootstrap.min.css'
+    'assets/css/app.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+    {% javascripts
+    'assets/js/jquery-1.8.2.min.js'
+    'assets/js/underscore-min.js'
+    'assets/js/bootstrap.min.js'
+    'assets/js/bootstrap-datepicker.js'
+    'assets/js/Templates.js'
+    'assets/js/admin.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-inner">
+
+            <div class="container-fluid">
+
+                <a class="brand" href="/hello/admin">My Admin</a>
+
+                <div class="navbar">
+
+                    <ul class="nav admin-nav">
+                        <li><a href="/phone">ORM Phone Add</a></li>
+                        <li><a href="/phone/list">ORM Phone List</a></li>
+                        <li><a href="/phone-details/motorola-xoom-with-wi-fi">ORM Phone Details</a></li>
+                    </ul>
+
+                </div>
+                <!--/.nav-collapse -->
+
+            </div>
+
+        </div>
+    </div>
+    <br/>
+
+    <div class="clearfix"></div>
+
+    <div class="container-fluid">
+
+        <div class="clearfix"></div>
+        <div class="sandbox-alert alert alert-danger" style="display: none !important;"></div>
+
+        {% block content %}{% endblock %}
+
+    </div>
+
+    {% block closure %}{% endblock %}
+
+</body>
+</html>

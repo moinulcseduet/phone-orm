@@ -1,0 +1,125 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.content-gap {
+    margin-right: 20px;
+}
+
+.kit-grid table {
+    width: 100%;
+}
+
+.kit-grid td, .kit-grid th {
+    padding: 10px !important;
+    white-space: nowrap;
+}
+
+.page-title {
+    margin-left: 20px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#frmSettings .control-label {
+    text-align: left !important;
+}
+
+#frmSettings .control-group {
+    margin-left: 20px;
+}
+
+.aging-status {
+    text-transform: uppercase;
+}
+
+small {
+    color: #999;
+}
+
+.highlighted {
+    color: #0480be;
+}
+
+.table-header{
+    margin-left: 20px;
+}
+
+#login-box{
+    margin: 100px 28%;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 0px;
+    background-color: #eeeeee;
+}
+
+#login-box .navbar{
+    background: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+#login-box .login-error{
+    padding: 5px 10px;
+    margin: 5px 20px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+
+#form label{
+    float:left;
+    width: 120px;
+    padding-right: 20px;
+}
+
+.action-btn-fixed-size{
+    width: 50px;
+}
+
+.modal{
+    width: 400px;
+}
+
+#myModalLabel, #changeStatusLabel{
+    font-size:16px;
+}
+
+#admin-form{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.highlight-value{
+    color: orangered;
+    font-size:18px;
+    font-weight: bold;
+}
+
+.radio-options input{
+    margin-top: -4px;
+}
+
+.radio-options label{
+
+    display: inline-block;
+    width: 50px;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.sandbox-alert{
+    width: 200px;
+    position: fixed;
+    left: 40%;
+    top: 35px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    z-index: 100;
+}

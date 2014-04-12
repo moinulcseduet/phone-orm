@@ -1,0 +1,32 @@
+{% extends 'LoosemonkiesCoreBundle::layout.html.twig' %}
+
+{% block title %} Welcome to phone details page {% endblock %}
+
+{% block content %}
+
+    <div class="row-fluid" style=" margin-top: 10px !important;">
+
+        <div class="phone-images">
+
+            {% for key, img in images %}
+
+                <img src="/upload/{{ id }}.{{ img }}.jpg" class="phone {% if key == 0 %} active {% endif %}">
+
+            {% endfor %}
+        </div>
+
+        <h1>{{phone.name}}</h1>
+
+        <p>{{phone.description}}</p>
+
+        <ul class="phone-thumbs">
+            {% for img in images %}
+                <li>
+                    <img src="/upload/{{ id }}.{{ img }}.jpg" onclick="setImage('{{ id }}.{{ img }}.jpg')">
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}

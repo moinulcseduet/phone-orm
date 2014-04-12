@@ -1,0 +1,26 @@
+phone_homepage:
+    pattern: /hello/{name}
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:index }
+    requirements: { _method: GET }
+
+phone_add:
+    pattern: /phone
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:addPhone }
+
+phone_list:
+    pattern: /phone/list
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneList }
+
+phone_details:
+    pattern: /phone-details/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneDetails }
+
+phone_search:
+    pattern: /phone-search
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneSearch }
+    requirements: { _method: POST }
+
+phone_search_with_sort:
+    pattern: /phone-sort
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneSort }
+    requirements: { _method: POST }

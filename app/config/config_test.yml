@@ -1,0 +1,38 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        enabled: false
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %test_database_host%
+        port:     %test_database_port%
+        dbname:   %test_database_name%
+        user:     %test_database_user%
+        password: %test_database_password%
+        charset:  UTF8
+
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true
+
+# Doctrine ODM Configuration
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://%test_mongodb_host%:%test_mongodb_port%
+            options: {}
+    default_database: %test_mongodb_name%
+    document_managers:
+        default:
+            auto_mapping: true

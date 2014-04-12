@@ -1,0 +1,11 @@
+loosemonkies_core:
+    resource: "@LoosemonkiesCoreBundle/Resources/config/routing.yml"
+    prefix: /
+
+service_industry:
+    resource: routes/industry.yml
+    prefix: /
+
+service_phone:
+    resource: routes/phone.yml
+    prefix: /

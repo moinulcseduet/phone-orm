@@ -1,0 +1,14 @@
+add_click_from_click:
+  pattern:  /click
+  defaults: { _controller: LoosemonkiesCoreBundle:Click:insert }
+  requirements: { _method: POST }
+
+get_ads_click:
+  pattern:  /click/{adsId}
+  defaults: { _controller: LoosemonkiesCoreBundle:Click:getClick }
+  requirements: { _method: GET }
+
+entry_transaction:
+  pattern:  /credit
+  defaults: { _controller: LoosemonkiesCoreBundle:Credit:updateTransaction }
+  requirements: { _method: GET }

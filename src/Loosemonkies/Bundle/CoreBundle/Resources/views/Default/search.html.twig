@@ -1,0 +1,10 @@
+
+<ul class="phones">
+    {% for phone in phones %}
+        <li class="thumbnail phone-listing">
+            <a href="/phone-details/{{phone['phone_id']}}" class="thumb"><img src="/upload/{{phone['images']}}"></a>
+            <a href="/phone-details/{{phone['phone_id']}}">{{ phone['name'] }}</a>
+            <p>{{phone['snippet']}}</p>
+        </li>
+    {% endfor %}
+</ul>

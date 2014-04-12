@@ -1,0 +1,14 @@
+new_industry:
+  pattern:  /industry
+  defaults: { _controller: LoosemonkiesCoreBundle:Industry:insert }
+  requirements: { _method: POST }
+
+all_industry:
+  pattern: /industry
+  defaults: { _controller: LoosemonkiesCoreBundle:Industry:getAll }
+  requirements: { _method: GET }
+
+industry_by_name:
+  pattern: /industry/name/{name}
+  defaults: { _controller: LoosemonkiesCoreBundle:Industry:getIndustryByName }
+  requirements: { _method: GET }
