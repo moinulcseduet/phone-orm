@@ -1,7 +1,7 @@
-LooseMonkies.com Service
+Moinul Phone list Application
 ========================
 
-This is the service layer of LooseMonkies.com!
+This is both service and front layer of phone list application!
 
 Installation
 ------------
@@ -14,14 +14,18 @@ Installation
 
     php composer.phar install
 
+    and
+
+    create database phone_orm and import phone_orm.sql
+
 2. Setup a VirtualHost with the following configuration (modify as needed):
 
     <VirtualHost *:80>
 
-        ServerName api.loosemonkies.dev
-        DocumentRoot "/Users/emran/Sites/lm/lm-service/web"
+        ServerName www.phone-orm.dev
+        DocumentRoot "/var/www/phone-orm/web"
 
-        <Directory "/Users/emran/Sites/lm/lm-service/web">
+        <Directory "/var/www/phone-orm/web">
             Options Indexes FollowSymLinks MultiViews
             AllowOverride All
             Allow from All
@@ -29,6 +33,10 @@ Installation
 
     </VirtualHost>
 
-3. Visit the site at http://api.loosemonkies.dev/user
+    and create app/Resources/assets folder symlink
+
+    ln -s app/Resources/assets assets
+
+3. Visit the site at http://www.phone-orm.dev/phone
 
 4. Enjoy!
