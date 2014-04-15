@@ -134,6 +134,18 @@ class Phone
     }
 
     /**
+     * Set id
+     *
+     * @return mixed
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Get id
      *
      * @return mixed

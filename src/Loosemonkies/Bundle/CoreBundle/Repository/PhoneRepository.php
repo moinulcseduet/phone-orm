@@ -108,4 +108,31 @@ class PhoneRepository extends EntityRepository
         return $phone;
     }
 
+    public function update($id, $data)
+    {
+        $phoneEntity = $this->find($id);
+
+        $mapper = new PhoneMapper();
+        $phone  = $mapper->map($data, $phoneEntity);
+
+        if ($phone->isValid() === false) {
+            throw new \InvalidArgumentException();
+        }
+
+        $this->_em->persist($phone);
+        $this->_em->flush();
+
+        return $phone->toArray();
+    }
+
+    public function delete($id)
+    {
+        $phone = $this->findOneBy(array('phone_id' => $id));
+
+        $this->_em->remove($phone);
+        $this->_em->flush();
+
+        return true;
+    }
+
 }

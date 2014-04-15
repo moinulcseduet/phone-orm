@@ -24,3 +24,11 @@ phone_search_with_sort:
     pattern: /phone-sort
     defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneSort }
     requirements: { _method: POST }
+
+phone_edit:
+    pattern: /phone-edit/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneEdit }
+
+phone_delete:
+    pattern: /phone-delete/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:Default:phoneDelete }
