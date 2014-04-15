@@ -4,7 +4,7 @@ function setImage(img) {
 
 function searchList(searchkey) {
 
-    if (searchkey.length > 2) {
+    if (searchkey.length > 0) {
 
         $.ajax({
             url: "/phone-search",
@@ -23,6 +23,36 @@ function sortSearch(sortkey) {
 
     $.ajax({
         url: "/phone-sort",
+        type: "post",
+        data: {searchkey: searchkey, sortkey: sortkey},
+        success: function(response){
+            $(".span10").html(response);
+        }
+    });
+}
+
+
+function searchOdmList(searchkey) {
+
+    if (searchkey.length > 0) {
+
+        $.ajax({
+            url: "/phone-odm-search",
+            type: "post",
+            data: {searchkey: searchkey},
+            success: function(response){
+                $(".span10").html(response);
+            }
+        });
+    }
+}
+
+function sortOdmSearch(sortkey) {
+
+    var searchkey = $('.search').val();
+
+    $.ajax({
+        url: "/phone-odm-sort",
         type: "post",
         data: {searchkey: searchkey, sortkey: sortkey},
         success: function(response){

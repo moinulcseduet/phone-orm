@@ -8,9 +8,9 @@
         <div class="span2">
             <!--Sidebar content-->
 
-            Search: <input name="query" type="text" value="" onkeyup="searchList(this.value)" class="search" />
+            Search: <input name="query" type="text" value="" onkeyup="searchOdmList(this.value)" class="search" />
             Sort by:
-            <select name="order_prop" onchange="sortSearch(this.value)">
+            <select name="order_prop" onchange="sortOdmSearch(this.value)">
                 <option value="name">Alphabetical</option>
                 <option value="age">Newest</option>
                 <option value="-age">Oldest</option>
@@ -23,12 +23,12 @@
             <ul class="phones">
                 {% for phone in phones %}
                     <li class="thumbnail phone-listing">
-                        <a href="/phone-details/{{phone.phoneId}}" class="thumb">
+                        <a href="/phone-details/odm/{{phone.phone_id}}" class="thumb">
                             {% set classes = phone.images|split(',') %}
                             {% set count = classes|length %}
-                            <img src="/upload/{{classes[count-1]|trim}}">
+                            <img src="/upload/odm/{{classes[count-1]|trim}}">
                         </a>
-                        <a href="/phone-details/{{phone.phoneId}}">{{ phone.name }}</a>
+                        <a href="/phone-details/odm/{{phone.phone_id}}">{{ phone.name }}</a>
                         <p>{{phone.snippet}}</p>
                     </li>
                 {% endfor %}

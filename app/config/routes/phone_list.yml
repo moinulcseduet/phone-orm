@@ -1,0 +1,21 @@
+phone_odm_add:
+    pattern: /phone/odm-add
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:addPhone }
+
+phone_odm_list:
+    pattern: /phone/odm-list
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneList }
+
+phone_odm_details:
+    pattern: /phone-details/odm/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneDetails }
+
+phone_odm_search:
+    pattern: /phone-odm-search
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneSearch }
+    requirements: { _method: POST }
+
+phone_odm_search_with_sort:
+    pattern: /phone-odm-sort
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneSort }
+    requirements: { _method: POST }

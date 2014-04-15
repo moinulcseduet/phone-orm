@@ -9,7 +9,7 @@
         <div class="phone-images">
             {% set classes = phone.images|split(',') %}
             {% set count = classes|length %}
-            <img src="/upload/{{ classes[count-1]|trim }}" class="phone active" />
+            <img src="/upload/odm/{{ classes[count-1]|trim }}" class="phone active">
         </div>
 
         <h1>{{phone.name}}</h1>
@@ -19,7 +19,7 @@
         <ul class="phone-thumbs">
             {% for img in classes|reverse %}
                 <li>
-                    <img src="/upload/{{ img|trim }}" onclick="setImage('{{ img|trim }}')" />
+                    <img src="/upload/odm/{{ img|trim }}" onclick="setImage('{{ img|trim }}')">
                 </li>
             {% endfor %}
         </ul>

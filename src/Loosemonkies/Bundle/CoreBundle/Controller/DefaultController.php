@@ -51,7 +51,13 @@ class DefaultController extends BaseController
                                 'attr' => array('placeholder' => 'Enter phone description')
                             ))
 
-                     ->add('images', 'file')
+                     ->add('images', 'file', array(
+                        'label' => 'Images',
+                        'required' => false,
+                        'attr' => array(
+                            'accept' => 'image/*',
+                            'multiple' => true
+                        )))
 
                      ->add('Add Phone', 'submit', array('attr' => array('class' => 'btn btn-success')))
                      ->getForm();
@@ -63,10 +69,18 @@ class DefaultController extends BaseController
             if ($form->isValid()) {
 
                 $formData = $form->getData();
-                $imageName = $formData['images']->getClientOriginalName();
 
-                $formData['images']->move('upload/', $imageName);
-                $formData['images'] = $imageName;
+                $imageNames = array();
+
+                foreach($formData['images'] as $image) {
+
+                    $imageName = $image->getClientOriginalName();
+
+                    $image->move('upload/', $imageName);
+                    $imageNames[] = $imageName;
+                }
+
+                $formData['images'] = implode(',', $imageNames);
 
                 $ret = $this->phoneRepository->insert($formData);
 
@@ -79,8 +93,11 @@ class DefaultController extends BaseController
             }
         }
 
-        $this->data['form'] = $form->createView();
+        $formView = $form->createView();
 
+        $formView->children['images']->vars['full_name'] = $formView->children['images']->vars['full_name'].'[]';
+
+        $this->data['form'] = $formView;
         return $this->render('LoosemonkiesCoreBundle:Default:add.html.twig', $this->data);
     }
 
@@ -94,8 +111,6 @@ class DefaultController extends BaseController
     public function phoneDetailsAction($id)
     {
         $this->data['phone']  = $this->phoneRepository->getPhoneByPhoneId($id);
-        $this->data['images'] = array(0,1,2,3,4,5,6);
-        $this->data['id']     = $id;
 
         return $this->render('LoosemonkiesCoreBundle:Default:details.html.twig', $this->data);
     }
