@@ -19,7 +19,7 @@
         <ul class="phone-thumbs">
             {% for img in classes|reverse %}
                 <li>
-                    <img src="/upload/odm/{{ img|trim }}" onclick="setImage('{{ img|trim }}')">
+                    <img src="/upload/odm/{{ img|trim }}" onclick="setOdmImage('{{ img|trim }}')">
                 </li>
             {% endfor %}
         </ul>

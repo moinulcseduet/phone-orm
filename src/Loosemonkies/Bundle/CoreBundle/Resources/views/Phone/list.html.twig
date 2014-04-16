@@ -30,6 +30,10 @@
                         </a>
                         <a href="/phone-details/odm/{{phone.phone_id}}">{{ phone.name }}</a>
                         <p>{{phone.snippet}}</p>
+                        <p>
+                            <a href="/phone-edit/odm/{{phone.phone_id}}">Edit</a> |
+                            <a href="/phone-delete/odm/{{phone.phone_id}}">Delete</a>
+                        </p>
                     </li>
                 {% endfor %}
             </ul>

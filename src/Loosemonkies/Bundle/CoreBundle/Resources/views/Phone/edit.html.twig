@@ -1,0 +1,22 @@
+{% extends 'LoosemonkiesCoreBundle::layout.html.twig' %}
+
+{% block title %} Welcome to add phone page {% endblock %}
+
+{% block content %}
+
+    <div style="float: left; padding-right: 40px;">{{ form(form) }}</div>
+
+    <div class="row-fluid" style="margin-top: 10px !important;">
+        <h1 style="margin-left: 312px;">Previously Uploaded Images</h1>
+        <ul class="phone-thumbs">
+            {% set classes = images|split(',') %}
+            {% for img in classes|reverse %}
+                <li>
+                    <img src="/upload/odm/{{ img|trim }}" />
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}

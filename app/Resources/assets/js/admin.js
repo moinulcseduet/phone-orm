@@ -31,6 +31,9 @@ function sortSearch(sortkey) {
     });
 }
 
+function setOdmImage(img) {
+    $('.phone').attr('src', '/upload/odm/' + img);
+}
 
 function searchOdmList(searchkey) {
 

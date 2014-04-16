@@ -19,3 +19,11 @@ phone_odm_search_with_sort:
     pattern: /phone-odm-sort
     defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneSort }
     requirements: { _method: POST }
+
+phone_edit:
+    pattern: /phone-edit/odm/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneEdit }
+
+phone_delete:
+    pattern: /phone-delete/odm/{id}
+    defaults: { _controller: LoosemonkiesCoreBundle:PhoneList:phoneDelete }

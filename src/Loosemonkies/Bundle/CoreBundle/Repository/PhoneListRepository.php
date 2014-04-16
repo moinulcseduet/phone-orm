@@ -161,4 +161,31 @@ class PhoneListRepository extends DocumentRepository
         return $phones;
     }
 
+    public function update($id, $data)
+    {
+        $phoneEntity = $this->find($id);
+
+        $mapper = new PhoneListMapper();
+        $phone  = $mapper->map($data, $phoneEntity);
+
+        if ($phone->isValid() === false) {
+            throw new \InvalidArgumentException();
+        }
+
+        $this->dm->persist($phone);
+        $this->dm->flush();
+
+        return $phone->toArray();
+    }
+
+    public function delete($id)
+    {
+        $phone = $this->findOneBy(array('phone_id' => $id));
+
+        $this->dm->remove($phone);
+        $this->dm->flush();
+
+        return true;
+    }
+
 }
