@@ -204,7 +204,9 @@ class DefaultController extends BaseController
                     $existsImg = explode(',', $formExistData['images']);
 
                     foreach($existsImg as $unlink_img) {
-                        unlink('upload/'.$unlink_img);
+                        if (file_exists('upload/'.$unlink_img)) {
+                            unlink('upload/'.$unlink_img);
+                        }
                     }
 
                     foreach($images as $image) {
@@ -260,7 +262,9 @@ class DefaultController extends BaseController
         $existsImg = explode(',', $data['images']);
 
         foreach($existsImg as $unlink_img) {
-            unlink('upload/'.$unlink_img);
+            if (file_exists('upload/'.$unlink_img)) {
+                unlink('upload/'.$unlink_img);
+            }
         }
 
         $delete = $this->phoneRepository->delete($id);

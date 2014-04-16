@@ -121,25 +121,25 @@ class PhoneListController extends BaseController
 
         $form = $this->createFormBuilder($phone)
                      ->add('name', 'text',
-                array(
-                    'attr' => array('placeholder' => 'Enter phone name')
-                ))
-                     ->add('phone_id', 'text',
-                array(
-                    'attr' => array('placeholder' => 'Enter phone id')
-                ))
-                     ->add('age', 'text',
-                array(
-                    'attr' => array('placeholder' => 'Enter phone age')
-                ))
-                     ->add('snippet', 'text',
-                array(
-                    'attr' => array('placeholder' => 'Enter phone snippet')
-                ))
-                     ->add('description', 'text',
-                array(
-                    'attr' => array('placeholder' => 'Enter phone description')
-                ))
+                        array(
+                            'attr' => array('placeholder' => 'Enter phone name')
+                        ))
+                             ->add('phone_id', 'text',
+                        array(
+                            'attr' => array('placeholder' => 'Enter phone id')
+                        ))
+                             ->add('age', 'text',
+                        array(
+                            'attr' => array('placeholder' => 'Enter phone age')
+                        ))
+                             ->add('snippet', 'text',
+                        array(
+                            'attr' => array('placeholder' => 'Enter phone snippet')
+                        ))
+                             ->add('description', 'text',
+                        array(
+                            'attr' => array('placeholder' => 'Enter phone description')
+                        ))
 
                      ->add('images', 'file', array(
                 'label' => 'Images',
@@ -169,11 +169,12 @@ class PhoneListController extends BaseController
                     $existsImg = explode(',', $formExistData['images']);
 
                     foreach($existsImg as $unlink_img) {
-                        unlink('upload/odm/'.$unlink_img);
+                        if (file_exists('upload/odm/'.$unlink_img)) {
+                            unlink('upload/odm/'.$unlink_img);
+                        }
                     }
 
                     foreach($images as $image) {
-
                         $imageName = $image->getClientOriginalName();
 
                         $image->move('upload/odm/', $imageName);
@@ -257,7 +258,9 @@ class PhoneListController extends BaseController
         $existsImg = explode(',', $data['images']);
 
         foreach($existsImg as $unlink_img) {
-            unlink('upload/odm/'.$unlink_img);
+            if (file_exists('upload/odm/'.$unlink_img)) {
+                unlink('upload/odm/'.$unlink_img);
+            }
         }
 
         $delete = $this->phoneListRepository->delete($id);
