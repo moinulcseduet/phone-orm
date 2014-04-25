@@ -57,7 +57,7 @@ class PhoneListController extends BaseController
                         ))
 
                      ->add('images', 'file', array(
-                        'label' => 'Images',
+                        'label' => 'Images (Select single or multiple image file)',
                         'required' => false,
                         'attr' => array(
                             'accept' => 'image/*',
@@ -142,12 +142,12 @@ class PhoneListController extends BaseController
                         ))
 
                      ->add('images', 'file', array(
-                'label' => 'Images',
-                'required' => false,
-                'attr' => array(
-                    'accept' => 'image/*',
-                    'multiple' => true
-                )))
+                            'label' => 'Images (Select single or multiple image file)',
+                            'required' => false,
+                            'attr' => array(
+                                'accept' => 'image/*',
+                                'multiple' => true
+                            )))
 
                      ->add('Update Phone', 'submit', array('attr' => array('class' => 'btn btn-success')))
                      ->getForm();

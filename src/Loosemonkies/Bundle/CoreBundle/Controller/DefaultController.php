@@ -53,7 +53,7 @@ class DefaultController extends BaseController
                             ))
 
                      ->add('images', 'file', array(
-                        'label' => 'Images',
+                        'label' => 'Images (Select single or multiple image file)',
                         'required' => false,
                         'attr' => array(
                             'accept' => 'image/*',
@@ -176,8 +176,8 @@ class DefaultController extends BaseController
                             'attr' => array('placeholder' => 'Enter phone description')
                         ))
 
-                             ->add('images', 'file', array(
-                        'label' => 'Images',
+                        ->add('images', 'file', array(
+                        'label' => 'Images (Select single or multiple image file)',
                         'required' => false,
                         'attr' => array(
                             'accept' => 'image/*',
